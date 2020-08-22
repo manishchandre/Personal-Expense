@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link href="css/main.css" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Expense</title>
+</head>
+<body>
+    <button id="btnAddExpense"> + </button>
+    <input id="inputAmount" type="text"> </input>
+    <script>
+        // set total expense as zero
+        let TotalExpense = 0;
+
+        // on button click add input amount to total expense
+        function addExpenseToTotal (){
+            // read the input amount
+            const inputElement = document.querySelector ("#inputAmount");
+            const textAmount = inputElement.value;
+
+            // convert input amount into number
+            const expense = parseInt(textAmount, 10);
+            
+
+            // add that value to total expense
+            TotalExpense = TotalExpense + expense;
+            console.log({TotalExpense});
+
+
+        }
+
+
+        
+
+        // grab the btn element
+        const element = document.querySelector("#btnAddExpense");
+        // listen to the click
+        element.addEventListener ("click", addExpenseToTotal, false);
+
+    </script>
+</body>
+</html>
